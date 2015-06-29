@@ -4,3 +4,5 @@ test/temp
 bower_components
 .tmp
 test/bower_components/
+app/elements/firebase-location/firebase-location.html
+.DS_Store

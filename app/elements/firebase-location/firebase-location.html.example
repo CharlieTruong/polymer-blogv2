@@ -1,0 +1,11 @@
+<script>
+  var FirebaseLocation = {
+    properties: {
+      location: {
+        type: String,
+        value: 'https://firebase-location.com',
+        readOnly: true
+      }
+    }
+  };
+</script>
