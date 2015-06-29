@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+<link rel="import" href="../firebase-location/firebase-location.html">
+
+<dom-module id="post-list">
+  
+  <template>
+    <firebase-collection
+      location="[[postLocation]]"
+      data="{{posts}}">
+    </firebase-collection>
+    <template is="dom-repeat" items="[[posts]]" as="post">
+      <h4>[[post.title]]</h4>
+    </template>
+  </template>
+
+  <script>
+    var myBehaviors = myBehaviors || {};
+
+    Polymer({
+      is: 'post-list',
+      behaviors: [myBehaviors.FirebaseLocation],
+      properties: {
+        postLocation: {
+          type: String,
+          computed: 'getPostLocation(location)'
+        }
+      },
+      getPostLocation: function(location) {
+        return location + '/posts';
+      }
+    });
+  </script>
+
+</dom-module>
