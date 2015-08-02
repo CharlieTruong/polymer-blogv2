@@ -1,0 +1,38 @@
+<dom-module id="post-preview">
+  
+  <template>
+    <paper-material elevation="1" id="post-preview">
+      <h4 id="post-title">[[post.title]]</h4>
+      <div>[[post.body]]</div>
+    </paper-material>
+  </template>
+
+  <style>
+    :host {
+      width: 20%;
+    }
+
+    #post-preview {
+      padding: 10px;
+      height: 200px;
+    }
+
+    #post-title {
+      margin-top: 0;
+    }
+  </style>
+
+  <script>
+    var myBehaviors = myBehaviors || {};
+
+    Polymer({
+      is: 'post-preview',
+      properties: {
+        post: {
+          type: Object,
+        }
+      }
+    });
+  </script>
+
+</dom-module>

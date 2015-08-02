@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/firebase-element/firebase-collection.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../firebase-location/firebase-location.html">
+<link rel="import" href="../post-preview.html">
 
 <dom-module id="post-list">
   
@@ -8,10 +10,18 @@
       location="[[postLocation]]"
       data="{{posts}}">
     </firebase-collection>
-    <template is="dom-repeat" items="[[posts]]" as="post">
-      <h4>[[post.title]]</h4>
-    </template>
+    <div class="horizontal layout wrap">
+      <template is="dom-repeat" items="[[posts]]" as="post">
+        <post-preview post="[[post]]"></post-preview>
+      </template>
+    </div>
   </template>
+
+  <style>
+    post-preview::shadow {
+      margin: 10px 0 0 10px;
+    }
+  </style>
 
   <script>
     var myBehaviors = myBehaviors || {};
